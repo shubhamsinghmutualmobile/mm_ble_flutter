@@ -12,10 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        brightness: Brightness.dark,
-      ),
+      theme: ThemeData(primarySwatch: Colors.green),
+      darkTheme: ThemeData(brightness: Brightness.dark),
       debugShowCheckedModeBanner: false,
       home: const DeviceListScreen(title: 'MM BLE'),
     );
