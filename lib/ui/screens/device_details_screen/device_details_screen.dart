@@ -83,7 +83,12 @@ class _DeviceDetailsScreenState extends State<DeviceDetailsScreen> {
 
   Future<bool> onBackPressed(Function startListeningAgain) async {
     print("On back pressed called!");
-    startListeningAgain();
+    widget.device.device.disconnect();
+    widget.device.device.state.listen((connectionState) {
+      if(connectionState == BluetoothDeviceState.disconnected) {
+        startListeningAgain();
+      }
+    });
     return true;
   }
 }
